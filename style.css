@@ -13,17 +13,18 @@ body {
 header {
     /* top bar at top with small text: view highscore button and timer */
     font-size: 12px;
-    background-color: var(--subtle);
+    /* background-color: var(--subtle); */
     color: var(--darker);
 }
-
+/*
 #pageHead {
-    /* coding quiz title, questions, main message of screen */
+    coding quiz title, questions, main message of screen 
 }
 
 #pageBody {
-    /* buttons, highscores, input/forms, check message */
+     buttons, highscores, input/forms, check message 
 }
+*/
 
 #pageBody button {
     background-color: #ff00ff;
@@ -43,3 +44,9 @@ header {
     color: #000000;
     border: 3px solid var(--darker);
 }
+/*
+#pageBody h3 {
+    color: #000000;
+
+}
+*/
