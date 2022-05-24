@@ -3,6 +3,8 @@ var timeEl = document.querySelector(".time");
 var pageHeadEl = document.querySelector("#pageHead");
 var pageBodyEl = document.querySelector("#pageBody");
 var viewScoresEl = document.querySelector(".viewScores");
+var checkEl = document.querySelector("#check");
+
 
 var q1 = '{"question":"Commonly used data types DO NOT include:", "a1":"strings", "a2":"booleans","a3":"alerts","a4":"numbers", "correctAnswer":"alerts"}'; //CORRECT ANSWER: a3
 var q2 = '{"question":"The condition in an if/else statement is enclosed within ________.", "a1":"quotes", "a2":"curly brackets","a3":"parentheses","a4":"square brackets", "correctAnswer":"parentheses"}'; //CORRECT ANSWER: a3
@@ -35,13 +37,17 @@ function startScreen() {
     cqIntro.textContent = "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!";
     pageBodyEl.appendChild(cqIntro);
     var startButton = document.createElement("button");
+    startButton.setAttribute("class","startButton");
+    startButton.textContent = "Start Quiz";
     pageBodyEl.appendChild(startButton);
     score = 0;
     index = 0;
     secondsLeft = 60;
     
     startButton.addEventListener("click", setTimer);
+    //startButton.addEventListener("click", displayQuestions);
     startButton.addEventListener("click", displayQuestions);
+        
 }
 
 
@@ -67,8 +73,14 @@ function clearSection(sectionID) {
 
 
 function displayQuestions() {
-    
+        
     clearSection(pageBodyEl);
+
+    setTimeout(() => {
+        clearSection(checkEl);
+        console.log('1 second finished!');
+    }, 1000);
+      
 
     var ans1 = document.createElement("button");
     var ans2 = document.createElement("button");
@@ -112,6 +124,8 @@ function displayQuestions() {
 
 
 function allDone() {
+
+    secondsLeft = 1;
 
     clearSection(pageBodyEl);
     pageHeadEl.textContent = "All Done!";
@@ -179,24 +193,28 @@ function allDone() {
 
 function answered(ans) {
     console.log("clicked answer: " + ans);
-    var check = document.createElement("p");
+    //var check = document.createElement("h3");
+    //var checked = "";
     console.log("check element created");
     var corrAns = questions[index].correctAnswer;
     console.log(corrAns);
     if (corrAns === ans) {
         score++;
-        check.textContent = "Correct!";
+        checkEl.textContent = "Correct!";
+        //pageBodyEl.appendChild(check);
         console.log("answer is correct");
     }
     else {
         secondsLeft -=5;
-        check.textContent = "Wrong!";
+        checkEl.textContent = "Wrong!";
+        //pageBodyEl.appendChild(check);
         console.log("answer is wrong");
         if (secondsLeft <= 0) {
             allDone();
         }
     }
-    pageBodyEl.appendChild(check);
+    console.log("check value");
+    //pageBodyEl.appendChild(check);
     index++;
     displayQuestions();
 }

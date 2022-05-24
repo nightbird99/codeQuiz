@@ -3,50 +3,144 @@
     --darker: #757575;
     
 }
+/*
+html {
+    display: flex;
+}
+*/
 
 body {
     font-size: 16px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Tahoma, Arial, Georgia, 'Times New Roman', Times, serif;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    margin: 15%;
+    
+
 }
 
 header {
     /* top bar at top with small text: view highscore button and timer */
-    font-size: 12px;
+    display:flex;
+    font-size: 16px;
     /* background-color: var(--subtle); */
     color: var(--darker);
+    height:fit-content;
+    margin: 10px;
 }
-/*
+
+header div {
+    margin-left: auto;
+}
+
+header button {
+    justify-content: flex-start;
+
+}
+
 #pageHead {
-    coding quiz title, questions, main message of screen 
+    /* text-align: center;  */
+    font-size: 32px;
+    margin: 5% 30% 30px 30%;
 }
+
 
 #pageBody {
-     buttons, highscores, input/forms, check message 
+    display: flex;
+    flex-direction: column; 
+    /* text-align: center; */
+    font-size: 18px;
+    margin: 0px 30% 0px 30%;
 }
-*/
+
+
 
 #pageBody button {
+    display: block;
+    height: fit-content;
+    width: fit-content;
     background-color: #ff00ff;
     color: #000000;
-    display: block;
+    font-size: 18px; 
+    margin: 2px 0% 2px 0%;
+    border-radius: 10px;
 }
 
-#pageBody li {
-    display: block;
-    background-color: var(--subtle);
-    color: #000000;
+
+button.startButton {
+    margin: 2px 40% 2px 40%;
 }
+
+
+#pageBody li {
+    display: flex;
+    
+    color: #000000;
+    margin: 5px; 
+    
+    justify-content: left;
+
+    
+}
+
+#pageBody ol, ul {
+    padding: 0%;
+}
+
+/* #pageBody ul {
+    padding: 0%;
+} */
 
 #pageBody input {
     display: inline-block;
     background-color: var(--subtle);
     color: #000000;
     border: 3px solid var(--darker);
+    margin: 5px;
 }
-/*
+
+#pageBody p {
+    flex-wrap: wrap;
+}
+
+ #pageBody form {
+    display: flex;
+    
+     
+    
+    justify-content: left;
+    flex-direction: row;
+    margin: 10px 0px 0px 0px;
+     
+    align-items: center;
+
+} 
+
+#pageBody form button {
+    margin: 0px 5px 0px 5px;
+}
+
+
 #pageBody h3 {
     color: #000000;
-
+    background-color: rgb(0, 255, 238);
 }
-*/
+
+#check {
+    color: var(--subtle);
+    font-size: 20px;
+    margin: 20px 20% 10px 30%;
+    border-top: var(--subtle) solid 2px;
+    padding-top: 10px;
+}
