@@ -37,4 +37,4 @@ Under the printed list of high scores, there are two buttons: "clear highscores"
 cleared. When the "go back" button is clicked, the user is returned to the start screen. 
 
 
-Deployment Link: https://nightbird99.github.io/codeQuiz/
+Deployment Link: https://oguerra9.github.io/codeQuiz/
